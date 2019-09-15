@@ -1,12 +1,15 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Card, Title, Paragraph } from 'react-native-paper';
 
-const PeopleItem = ({ item }) => {
+export default function PeopleItem({ item }) {
   return (
-    <View>
-      <Text>{item.firstName}</Text>
-    </View>
+    <Card>
+      <Card.Content>
+        <Title>
+          {item.firstName} {item.lastName}
+        </Title>
+        <Paragraph>{item.company}</Paragraph>
+      </Card.Content>
+    </Card>
   );
-};
-
-export default PeopleItem;
+}
