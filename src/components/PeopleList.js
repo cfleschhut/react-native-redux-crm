@@ -22,7 +22,9 @@ const mapStateToProps = state => {
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    padding: 15,
+  },
 });
 
 export default connect(mapStateToProps)(PeopleList);

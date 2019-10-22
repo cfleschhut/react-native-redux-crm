@@ -2,28 +2,28 @@
   {
     "id": "1",
     "firstName": "firstName 1",
-    "lastName": "lastName",
+    "lastName": "lastName 1",
     "phone": "555-555-1234",
-    "company": "company",
-    "project": "project",
-    "notes": "note"
+    "company": "company 1",
+    "project": "project 1",
+    "notes": "note 1"
   },
   {
     "id": "2",
     "firstName": "firstName 2",
-    "lastName": "lastName",
+    "lastName": "lastName 2",
     "phone": "555-555-1234",
-    "company": "company",
-    "project": "project",
-    "notes": "note"
+    "company": "company 2",
+    "project": "project 2",
+    "notes": "note 2"
   },
   {
     "id": "3",
     "firstName": "firstName 3",
-    "lastName": "lastName",
+    "lastName": "lastName 3",
     "phone": "555-555-1234",
-    "company": "company",
-    "project": "project",
-    "notes": "note"
+    "company": "company 3",
+    "project": "project 3",
+    "notes": "note 3"
   }
 ]
