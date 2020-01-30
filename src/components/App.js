@@ -7,13 +7,8 @@
  */
 
 import React from 'react';
-import { View } from 'react-native';
-import PeopleList from './PeopleList';
+import Navigation from './Navigation';
 
 export default function App() {
-  return (
-    <View>
-      <PeopleList />
-    </View>
-  );
+  return <Navigation />;
 }
