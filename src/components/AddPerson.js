@@ -1,14 +1,19 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import { Headline } from 'react-native-paper';
 
 function AddPerson() {
   return (
-    <View>
-      <Text>AddPerson screen</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Headline>AddPerson screen</Headline>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default AddPerson;
