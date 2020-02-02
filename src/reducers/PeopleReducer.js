@@ -1,13 +1,17 @@
-import people from './people.json';
-
 const initialState = {
-  people,
+  people: [],
   detailView: false,
   personSelected: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case 'FETCH_CONTACTS_SUCCESS':
+      return {
+        ...state,
+        people: [...state.people, ...action.payload],
+      };
+
     case 'SELECTED_PERSON':
       return {
         ...state,

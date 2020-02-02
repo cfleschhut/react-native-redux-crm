@@ -8,8 +8,8 @@ export default function PeopleItem({ item, selectPerson }) {
       <Card style={styles.card}>
         <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
         <Card.Title
-          title={`${item.firstName} ${item.lastName}`}
-          subtitle={item.company}
+          title={`${item.first_name} ${item.last_name}`}
+          subtitle={item.email}
           left={props => <Avatar.Icon {...props} icon="folder" />}
         />
       </Card>

@@ -10,3 +10,14 @@ export const noneSelected = () => {
     type: 'NONE_SELECTED',
   };
 };
+
+export const fetchContacts = () => {
+  return dispatch => {
+    fetch('https://reqres.in/api/users')
+      .then(response => response.json())
+      .then(data => {
+        dispatch({ type: 'FETCH_CONTACTS_SUCCESS', payload: data.data });
+      })
+      .catch(error => console.log(error));
+  };
+};

@@ -5,7 +5,7 @@ import { Card, Avatar, Button } from 'react-native-paper';
 import * as actions from '../actions';
 
 function PersonDetail({ person, noneSelected }) {
-  const { firstName, lastName, company } = person;
+  const { first_name, last_name, email } = person;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -13,8 +13,8 @@ function PersonDetail({ person, noneSelected }) {
         <Card style={styles.card}>
           <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
           <Card.Title
-            title={`${firstName} ${lastName}`}
-            subtitle={company}
+            title={`${first_name} ${last_name}`}
+            subtitle={email}
             left={props => <Avatar.Icon {...props} icon="folder" />}
           />
           <Card.Actions>

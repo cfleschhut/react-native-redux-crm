@@ -1,26 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, SafeAreaView, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import PeopleItem from './PeopleItem';
 import PersonDetail from './PersonDetail';
 
-function PeopleList({ people, detailView, selectPerson }) {
-  if (detailView) {
-    return <PersonDetail />;
+class PeopleList extends Component {
+  componentDidMount() {
+    this.props.fetchContacts();
   }
 
-  return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={people}
-        renderItem={({ item }) => (
-          <PeopleItem item={item} selectPerson={selectPerson} />
-        )}
-        keyExtractor={item => item.id}
-      />
-    </SafeAreaView>
-  );
+  render() {
+    const { people, detailView, selectPerson } = this.props;
+
+    if (detailView) {
+      return <PersonDetail />;
+    }
+
+    return (
+      <SafeAreaView style={styles.container}>
+        <FlatList
+          data={people}
+          renderItem={({ item }) => (
+            <PeopleItem item={item} selectPerson={selectPerson} />
+          )}
+          keyExtractor={item => item.id.toString()}
+        />
+      </SafeAreaView>
+    );
+  }
 }
 
 const mapStateToProps = state => {
@@ -32,6 +40,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    fetchContacts: () => dispatch(actions.fetchContacts()),
     selectPerson: id => dispatch(actions.selectPerson(id)),
   };
 };
