@@ -23,7 +23,7 @@ class PeopleList extends Component {
         <FlatList
           data={people}
           renderItem={({ item }) => (
-            <PeopleItem item={item} selectPerson={selectPerson} />
+            <PeopleItem person={item} selectPerson={selectPerson} />
           )}
           keyExtractor={item => item.id.toString()}
         />

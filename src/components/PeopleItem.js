@@ -1,25 +1,11 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet } from 'react-native';
-import { Card, Avatar } from 'react-native-paper';
+import { TouchableOpacity } from 'react-native';
+import PersonCard from './PersonCard';
 
-export default function PeopleItem({ item, selectPerson }) {
-  return (
-    <TouchableOpacity onPress={() => selectPerson(item.id)}>
-      <Card style={styles.card}>
-        <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-        <Card.Title
-          title={`${item.first_name} ${item.last_name}`}
-          subtitle={item.email}
-          left={props => <Avatar.Icon {...props} icon="folder" />}
-        />
-      </Card>
-    </TouchableOpacity>
-  );
-}
+const PeopleItem = ({ person, selectPerson }) => (
+  <TouchableOpacity onPress={() => selectPerson(person.id)}>
+    <PersonCard person={person} />
+  </TouchableOpacity>
+);
 
-const styles = StyleSheet.create({
-  card: {
-    marginHorizontal: 16,
-    marginVertical: 8,
-  },
-});
+export default PeopleItem;
