@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Card, Avatar, Button } from 'react-native-paper';
 import * as actions from '../actions';
@@ -33,9 +34,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    noneSelected: () => dispatch(actions.noneSelected()),
-  };
+  return bindActionCreators(actions, dispatch);
 };
 
 const styles = StyleSheet.create({

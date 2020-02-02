@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, SafeAreaView, FlatList } from 'react-native';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import PeopleItem from './PeopleItem';
@@ -39,10 +40,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    fetchContacts: () => dispatch(actions.fetchContacts()),
-    selectPerson: id => dispatch(actions.selectPerson(id)),
-  };
+  return bindActionCreators(actions, dispatch);
 };
 
 const styles = StyleSheet.create({
